@@ -1,16 +1,12 @@
 FROM ivonet/ubuntu:18.04 AS builder
 
-#https://download-cf.jetbrains.com/idea/ideaIU-2019.1.2.tar.gz
-#https://download-cf.jetbrains.com/idea/ideaIU-2019.1.2-jbr11.tar.gz
-#https://download-cf.jetbrains.com/idea/ideaIU-2019.1.2-no-jbr.tar.gz
-#https://download-cf.jetbrains.com/idea/ideaIU-2019.1.3.tar.gz
-#https://download-cf.jetbrains.com/idea/ideaIU-2019.1.3-no-jbr.tar.gz
+#https://download-cf.jetbrains.com/python/pycharm-professional-2019.3.1.tar.gz
+#https://download-cf.jetbrains.com/python/pycharm-community-2019.3.1.dmg
 
-
-RUN /usr/bin/curl -s -L "https://download-cf.jetbrains.com/python/pycharm-community-2019.2.4.tar.gz" | /bin/tar xz -C /opt/ \
+RUN /usr/bin/curl -s -L "https://download-cf.jetbrains.com/python/pycharm-community-2019.3.1.tar.gz" | /bin/tar xz -C /opt/ \
  && mv -v /opt/pycharm* /opt/pycharm
 
-FROM ivonet/x11webui:latest
+FROM ivonet/x11webui:1.0
 
 COPY --from=builder /opt/pycharm /opt/pycharm
 

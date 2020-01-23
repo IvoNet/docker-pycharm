@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 NAME=pycharm
 PORT=11000
-WAIT=5
+WAIT=3
 
 if [ ! "$(docker ps -q -f name=$NAME)" ]; then
     if [ "$(docker ps -aq -f status=exited -f name=$NAME)" ]; then
@@ -21,8 +21,8 @@ if [ ! "$(docker ps -q -f name=$NAME)" ]; then
         -e AUTH=${AUTH:-false}                                    \
         -e WIDTH=1920                                             \
         -e HEIGHT=1080                                            \
-        -v /Users/ivonet/dev/docker-pycharm/projects:/nobody/PycharmProjects \
-        -v /Users/ivonet/.config/ivonet/docker/.PyCharmCE2019.2:/nobody/.PyCharmCE2019.2 \
+        -v ${HOME}/dev/docker-pycharm/projects:/nobody/PycharmProjects \
+        -v ${HOME}/.config/ivonet/docker/.PyCharmCE2019.3:/nobody/.PyCharmCE2019.3 \
         ivonet/pycharm
 
     sleep $WAIT

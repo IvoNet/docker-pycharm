@@ -2,7 +2,7 @@
 HUB=ivonet
 #HUB=192.168.2.3:5555
 image=pycharm
-version=2019.2.4
+version=2019.3.1
 
 deploy=false
 #deploy=true
