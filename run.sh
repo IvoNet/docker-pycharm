@@ -15,5 +15,7 @@ docker run                             \
     -e WIDTH=1920                      \
     -e HEIGHT=1080                     \
     -v $(pwd)/:/project                \
-    -v ${HOME}/.config/ivonet/docker/.PyCharmCE2019.3:/nobody/.PyCharmCE2019.3 \
     ${HUB}/pycharm
+
+
+#-v ${HOME}/.config/ivonet/docker/.PyCharmCE2019.3:/nobody/.PyCharmCE2019.3 \
