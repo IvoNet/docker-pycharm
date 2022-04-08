@@ -3,7 +3,7 @@ FROM ivonet/ubuntu:18.04 AS builder
 RUN /usr/bin/curl -s -L "https://download.jetbrains.com/python/pycharm-community-2021.3.3.tar.gz" | /bin/tar xz -C /opt/ \
  && mv -v /opt/pycharm* /opt/pycharm
 
-FROM ivonet/x11webui:0.1
+FROM ivonet/x11webui:test
 
 COPY --from=builder /opt/pycharm /opt/pycharm
 
