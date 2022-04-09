@@ -22,7 +22,7 @@ if [ ! "$(docker ps -q -f name=$NAME)" ]; then
         -e WIDTH=1920                                             \
         -e HEIGHT=1080                                            \
         -v ${HOME}/dev/docker-pycharm/projects:/nobody/PycharmProjects \
-        -v ${HOME}/.config/ivonet/docker/.PyCharmCE2019.3:/nobody/.PyCharmCE2019.3 \
+        -v ${HOME}/.config/ivonet/docker/.PyCharm:/nobody/.config/JetBrains/PyCharmCE2021.3 \
         ivonet/pycharm
 
     sleep $WAIT
