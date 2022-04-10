@@ -3,7 +3,6 @@
 HUB=ivonet
 #HUB=192.168.2.3:5555
 
-
 docker run                             \
     -it                                \
     --rm                               \
@@ -12,9 +11,9 @@ docker run                             \
     -p 8080:8080                       \
     -p 5901:5901                       \
     -e AUTH=${AUTH:-false}             \
-    -e WIDTH=1920                      \
-    -e HEIGHT=1080                     \
-    -v $(pwd)/:/project                \
+    -e WIDTH=3400                      \
+    -e HEIGHT=1400                     \
+    -v $(pwd)/projects:/project        \
     ${HUB}/pycharm
 
 
