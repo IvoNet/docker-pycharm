@@ -3,13 +3,9 @@ FROM ivonet/ubuntu:22.04 AS builder
 RUN /usr/bin/curl -s -L "https://download.jetbrains.com/python/pycharm-community-2022.1.tar.gz" | /bin/tar xz -C /opt/ \
  && mv -v /opt/pycharm* /opt/pycharm
 
-FROM ivonet/x11webui:2.2-22.04
+FROM ivonet/web-vnc:1.0_22.04
 
 COPY --from=builder /opt/pycharm /opt/pycharm
-
-#Fix:
-#       Warning **: Error retrieving accessibility bus address:
-#https://www.raspberrypi.org/forums/viewtopic.php?t=196070
 
 RUN apt-get update -qq -y \
  && apt-get install -y --no-install-recommends \

@@ -11,7 +11,8 @@ docker run                             \
     -p 8080:8080                       \
     -p 5901:5901                       \
     -e AUTH=${AUTH:-false}             \
-    -e WIDTH=3400                      \
+    -e PUID=$(id -u $USER)             \
+    -e PGID=$(id -g $USER)             \
     -e HEIGHT=1400                     \
     -v $(pwd)/projects:/project        \
     ${HUB}/pycharm
