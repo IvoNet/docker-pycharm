@@ -1,9 +1,9 @@
-FROM ivonet/ubuntu:20.04 AS builder
+FROM ivonet/ubuntu:22.04 AS builder
 
-RUN /usr/bin/curl -s -L "https://download.jetbrains.com/python/pycharm-community-2021.3.3.tar.gz" | /bin/tar xz -C /opt/ \
+RUN /usr/bin/curl -s -L "https://download.jetbrains.com/python/pycharm-community-2022.1.tar.gz" | /bin/tar xz -C /opt/ \
  && mv -v /opt/pycharm* /opt/pycharm
 
-FROM ivonet/x11webui:2.0-20.04
+FROM ivonet/x11webui:2.2-22.04
 
 COPY --from=builder /opt/pycharm /opt/pycharm
 
