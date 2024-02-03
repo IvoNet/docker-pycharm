@@ -1,9 +1,9 @@
 FROM ivonet/ubuntu:22.04 AS builder
 
-RUN /usr/bin/curl -s -L "https://download.jetbrains.com/python/pycharm-community-2022.1.tar.gz" | /bin/tar xz -C /opt/ \
+RUN /usr/bin/curl -s -L "https://download.jetbrains.com/python/pycharm-professional-2023.3.3.tar.gz" | /bin/tar xz -C /opt/ \
  && mv -v /opt/pycharm* /opt/pycharm
 
-FROM ivonet/web-vnc:1.0_22.04
+FROM ivonet/web-vnc:1.1.0_22.04
 
 COPY --from=builder /opt/pycharm /opt/pycharm
 
